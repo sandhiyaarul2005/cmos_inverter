@@ -1,4 +1,4 @@
-# CMOS Inverter Pre-Layout Simulation
+# Pre-Layout Simulation
 
 This repository contains the **pre-layout simulation results** of a CMOS inverter designed using the **SKY130 Open PDK**. All simulations were performed at the schematic level using **xschem** with **ngspice** as the simulation backend.
 
