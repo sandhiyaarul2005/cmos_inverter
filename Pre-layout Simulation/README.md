@@ -82,10 +82,12 @@ Measurement of delay from input transition to output transition (TPHL and TPLH).
 ![Increasing VDD](increase_vdd_delay.png)  
 
 - **Reducing Load Capacitance to Reduce Delay**  
-![Reducing Load Capacitance](reduce_cap_delay.png)  
+![Reducing Load Capacitance](reduce_cap_delay.png)
+With 1pico as load the raising time is found to be 2 nano sec. When the load is reduced to 0.5pico the raising time is reduced to 1 nano sec.
 
 - **Transistor Sizing to Reduce Delay**  
-![Sizing to Reduce Delay](sizing_delay.png)  
+![Sizing to Reduce Delay](sizing_delay.png)
+Without any capacitive loading the sizing did not produce any reduced delay. With 0.5pico as load and increasing the size, the raising time is reduced to 0.5 nano sec
 
 ---
 
