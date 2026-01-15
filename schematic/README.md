@@ -1,4 +1,4 @@
-## Schematic Design and Pre-Layout Simulation
+## Schematic Design
 
 The CMOS inverter was designed at the schematic level using xschem with the SKY130 Open PDK.
 
