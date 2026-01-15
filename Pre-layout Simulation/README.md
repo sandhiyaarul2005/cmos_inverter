@@ -4,20 +4,6 @@ This repository contains the **pre-layout simulation results** of a CMOS inverte
 
 ---
 
-## Table of Contents
-- [Simulations Performed](#simulations-performed)
-  - [DC Analysis (Voltage Transfer Characteristics)](#1-dc-analysis-voltage-transfer-characteristics)
-  - [Transient Analysis](#2-transient-analysis)
-- [Tools Used](#tools-used)
-- [Simulation Results](#simulation-results)
-  - [DC Analysis – VTC and Noise Margin](#dc-analysis--vtc-and-noise-margin)
-  - [Transient Analysis – Delay Measurement](#transient-analysis--delay-measurement)
-  - [Power Analysis](#power-analysis)
-- [Delay Optimization Techniques](#delay-optimization-techniques)
-- [Observations](#observations)
-
----
-
 ## Simulations Performed
 
 ### 1. DC Analysis (Voltage Transfer Characteristics)
@@ -40,18 +26,6 @@ This analysis verifies the static behavior and noise immunity of the inverter.
 
 This analysis validates the switching performance and dynamic behavior of the CMOS inverter.
 
-## Simulation Results
-
-### DC Analysis – VTC and Noise Margin
-![DC Analysis VTC](dc_vtc.png)
-
-### Transient Analysis – Delay Measurement
-![Transient Analysis](transient_waveform.png)
-
-### Power Analysis
-![Power Analysis](power_analysis.png)
-
----
 
 ## Delay Optimization Techniques
 To improve the switching speed of the inverter, the following methods were explored:
@@ -71,4 +45,54 @@ To improve the switching speed of the inverter, the following methods were explo
 
 
 ---
+
+---
+
+## Simulation Results
+
+### 1. DC Analysis
+
+#### 1.1 Voltage Transfer Characteristic (VTC)
+![VTC Curve](vtc_curve.png)  
+VTC showing output voltage (Vout) versus input voltage (Vin) for the CMOS inverter.
+
+#### 1.2 VTC with High Gain Region
+![VTC with High Gain](vtc_high_gain.png)  
+Blue markers indicate the region of maximum gain (steepest slope) of the VTC.
+
+#### 1.3 Noise Margin
+![Noise Margin](noise_margin.png)  
+Noise margin is derived from VIL and VIH points on the VTC.
+
+---
+
+### 2. Transient Analysis
+
+#### 2.1 Transient Response
+![Transient Response](transient_response.png)  
+Input and output waveforms of the inverter showing switching behavior.
+
+#### 2.2 Propagation Delay
+![Propagation Delay](propagation_delay.png)  
+Measurement of delay from input transition to output transition (TPHL and TPLH).
+
+#### 2.3 Delay Optimization Techniques
+
+- **Increasing VDD to Reduce Delay**  
+![Increasing VDD](increase_vdd_delay.png)  
+
+- **Reducing Load Capacitance to Reduce Delay**  
+![Reducing Load Capacitance](reduce_cap_delay.png)  
+
+- **Transistor Sizing to Reduce Delay**  
+![Sizing to Reduce Delay](sizing_delay.png)  
+
+---
+
+### 3. Power Analysis
+![Power Calculation](power_calculation.png)  
+Estimation of dynamic and static power consumption of the CMOS inverter.
+
+---
+
 
