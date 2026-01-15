@@ -1,0 +1,8 @@
+* SPICE3 file created from cmos_inverter.ext - technology: sky130A
+
+.option scale=10n
+
+.subckt cmos_inv in a_n195_n400# vdd vss
+X0 a_n195_n400# in vss vss sky130_fd_pr__nfet_01v8 ad=4.5k pd=290 as=4.5k ps=290 w=1e+08 l=1.5e+07
+X1 a_n195_n400# in vdd vdd sky130_fd_pr__pfet_01v8 ad=9k pd=490 as=9k ps=490 w=2e+08 l=1.5e+07
+.ends
