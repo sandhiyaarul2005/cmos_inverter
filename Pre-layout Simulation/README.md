@@ -40,15 +40,6 @@ This analysis verifies the static behavior and noise immunity of the inverter.
 
 This analysis validates the switching performance and dynamic behavior of the CMOS inverter.
 
----
-
-## Tools Used
-- **xschem** – schematic capture and simulation setup  
-- **ngspice** – simulation engine  
-- **SKY130 Open PDK** – technology library  
-
----
-
 ## Simulation Results
 
 ### DC Analysis – VTC and Noise Margin
