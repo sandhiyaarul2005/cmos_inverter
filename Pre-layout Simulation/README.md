@@ -1,12 +1,26 @@
-## Pre-Layout Simulation
+# CMOS Inverter Pre-Layout Simulation
 
-This section presents the **pre-layout simulation results** of the CMOS inverter designed using the SKY130 Open PDK. All simulations were performed at the schematic level using **xschem** with **ngspice** as the simulation backend.
+This repository contains the **pre-layout simulation results** of a CMOS inverter designed using the **SKY130 Open PDK**. All simulations were performed at the schematic level using **xschem** with **ngspice** as the simulation backend.
 
 ---
 
-### Simulations Performed
+## Table of Contents
+- [Simulations Performed](#simulations-performed)
+  - [DC Analysis (Voltage Transfer Characteristics)](#1-dc-analysis-voltage-transfer-characteristics)
+  - [Transient Analysis](#2-transient-analysis)
+- [Tools Used](#tools-used)
+- [Simulation Results](#simulation-results)
+  - [DC Analysis – VTC and Noise Margin](#dc-analysis--vtc-and-noise-margin)
+  - [Transient Analysis – Delay Measurement](#transient-analysis--delay-measurement)
+  - [Power Analysis](#power-analysis)
+- [Delay Optimization Techniques](#delay-optimization-techniques)
+- [Observations](#observations)
 
-#### 1. DC Analysis (Voltage Transfer Characteristics)
+---
+
+## Simulations Performed
+
+### 1. DC Analysis (Voltage Transfer Characteristics)
 - A DC sweep of the input voltage was performed to obtain the **Voltage Transfer Characteristics (VTC)** of the CMOS inverter.
 - From the VTC curve, the following parameters were extracted:
   - \( V_{IL} \), \( V_{IH} \)
@@ -17,7 +31,7 @@ This analysis verifies the static behavior and noise immunity of the inverter.
 
 ---
 
-#### 2. Transient Analysis
+### 2. Transient Analysis
 - Transient simulation was performed by applying a pulse input to the inverter.
 - The following dynamic parameters were evaluated:
   - Propagation delay (\( t_{PLH} \) and \( t_{PHL} \))
@@ -28,28 +42,42 @@ This analysis validates the switching performance and dynamic behavior of the CM
 
 ---
 
-### Tools Used
-- xschem – schematic capture and simulation setup
-- ngspice – simulation engine
-- SKY130 Open PDK
+## Tools Used
+- **xschem** – schematic capture and simulation setup  
+- **ngspice** – simulation engine  
+- **SKY130 Open PDK** – technology library  
 
 ---
 
-### Simulation Results
+## Simulation Results
 
-#### DC Analysis – VTC and Noise Margin
+### DC Analysis – VTC and Noise Margin
 ![DC Analysis VTC](dc_vtc.png)
 
-#### Transient Analysis – Delay Measurement
+### Transient Analysis – Delay Measurement
 ![Transient Analysis](transient_waveform.png)
 
-#### Power Analysis
+### Power Analysis
 ![Power Analysis](power_analysis.png)
 
 ---
 
-### Observations
-- The inverter exhibits proper switching behavior with well-defined logic levels.
-- Noise margins are sufficient, indicating good noise immunity.
-- Delay and power values are within expected limits for a basic CMOS inverter at schematic level.
+## Delay Optimization Techniques
+To improve the switching speed of the inverter, the following methods were explored:
+
+1. **Increasing \( V_{DD} \)**  
+   - Raising the supply voltage increases the drive current of MOSFETs, reducing propagation delay.  
+   - Observed reduction in \( t_{PLH} \) and \( t_{PHL} \), but slightly higher dynamic power.
+
+2. **Reducing Capacitance Loading**  
+   - Minimizing the load capacitance at the output node reduces the time constant, speeding up transitions.  
+   - Delay improved significantly for lower capacitance scenarios.
+
+3. **Increasing MOSFET Sizing**  
+   - Increasing the width of NMOS and PMOS transistors enhances the drive current, which can lower propagation delay.  
+   - **Important:** This technique is effective only when there is significant external capacitive loading at the output. Without a load capacitance, simply increasing transistor size does not noticeably reduce delay.  
+   - Trade-off: Larger devices consume more area and slightly more power.
+
+
+---
 
