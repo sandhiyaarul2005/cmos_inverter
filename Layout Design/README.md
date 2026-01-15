@@ -34,7 +34,7 @@ The `.ext` file was used to extract parasitics and generate the `.spice` netlist
 - Propagation Delay  
 - Power Consumption  
 
-You can run the SPICE simulation using **ngspice**:
+Run the SPICE simulation using **ngspice**:
 
 ```bash
 ngspice cmos_inverter.spice
